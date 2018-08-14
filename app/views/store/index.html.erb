@@ -8,6 +8,7 @@
  	<%= image_tag(product.image.url, class: 'list_image') %>
 		<h3><%= product.title %></h3>
 		<%= sanitize(product.description) %>
+		<p>Stock: <%= product.stock%></p>
 	<div class="price_line">
 		<span class="price">
 		<%= number_to_currency(product.price, unit: "$US ", delimiter: ".", separator: ",") %>

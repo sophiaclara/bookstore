@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   	get :who_bought, on: :member
 	end
 
-  scope '(:locale)' do
+  scope '(:locale)',locale: /en|es/ do
     resources :orders
     resources :line_items
     resources :carts
