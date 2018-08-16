@@ -31,11 +31,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rails-i18n'
 gem 'webpacker'
 gem 'foreman'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

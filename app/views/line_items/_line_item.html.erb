@@ -3,9 +3,8 @@
 <% else %>
 <tr>
 <% end %>
-
-<tr>
-	<td><%= line_item.quantity %>&times;</td>
-	<td><%= line_item.product.title %></td>
-	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+  <td><%= line_item.quantity %> x </td>
+  <td><%= line_item.product.title %></td>
+  <td class="item_price"><%= number_to_currency(line_item.quantity * line_item.product.price, unit: "Rp ", delimeter: ".", separator: ",") %></td>
+  <td><%= link_to 'Remove', line_item, method: :delete, data: {confirm: 'are you sure?'}%></td>
 </tr>
