@@ -1,0 +1,111 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+
+    store:
+      index:
+        title_html:  "Su Cat&aacute;logo de Pragmatic"
+        add_html:    "A&ntilde;adir al Carrito"
+    
+    layouts:
+      application:
+        title:      "Biblioteca de Pragmatic"
+        home:       "Inicio"
+        questions:  "Preguntas"
+        news:       "Noticias"
+        contact:    "Contacto"
+
+    carts:
+      cart:
+        title:      "Carrito de la Compra"
+        empty:      "Vaciar Carrito"
+        checkout:   "Comprar"
+
+    number:
+      currency:
+        format:
+          unit:       "$US"
+          precision:  2
+          separator:  ","
+          delimiter:  "."
+          format:     "%n&nbsp;%u"
+
+    orders:
+      new:
+        legend:         "Por favor, introduzca sus datos"
+      form:
+        name:           "Nombre"
+        address_html:   "Dirreci&oacute;n"
+        email:          "E-mail"
+        pay_type:       "Forma de pago"
+        pay_prompt_html: "Seleccione un método de pago"
+        submit: "Realizar Pedido"
+        pay_types:
+          check:  "Cheque"
+          credit_card:  "Tarjeta de Crédito"
+          purchase_order: "Orden de Compra"
+        check_pay_type:
+          routing_number: "# de Enrutamiento"
+          account_number: "# de Cuenta"
+        credit_card_pay_type:
+          cc_number: "Número"
+          expiration_date: "Expiración"
+        purchase_order_pay_type:
+          po_number: "Número"
+
+    activerecord:
+      errors:
+        messages:
+          inclusion: "no est&aacute; incluido en la lista"
+          blank: "no puede quedar en blanco"
+    errors:
+        template:
+          body:     "Hay problemas con los siguientes campos:"
+          header:
+            one:    "1 error ha impedido que este %{model} se guarde"
+            other:  "%{count} errores han impedido que este %{model} se guarde"
+
+    activerecord:
+      models:
+        order:      "pedido"
+      attributes:
+        order:
+          address:  "Direcci&oacute;n"
+          name:     "Nombre"
+          email:    "E-mail"
+          pay_type: "Forma de pago"
+
+    thanks: "Gracias por su pedido"    
+
+
+
+

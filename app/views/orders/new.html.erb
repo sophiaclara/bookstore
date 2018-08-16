@@ -1,0 +1,10 @@
+<div class="depot_form">
+	<fieldset>
+		<legend><%= t('.legend') %></legend>
+	<%= render 'form', order: @order %>
+	</fieldset>
+</div>
+
+<%= link_to 'Back', orders_path %>
+
+<%= javascript_pack_tag("pay_type") %>
