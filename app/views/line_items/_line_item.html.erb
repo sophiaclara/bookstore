@@ -7,4 +7,6 @@
   <td><%= line_item.product.title %></td>
   <td class="item_price"><%= number_to_currency(line_item.quantity * line_item.product.price, unit: "Rp ", delimeter: ".", separator: ",") %></td>
   <td><%= link_to 'Remove', line_item, method: :delete, data: {confirm: 'are you sure?'}%></td>
+  <td><%= button_to '-', reduce_qty_path(id: line_item) %>
+  <td><%= button_to '+', line_items_path(product_id: line_item.product) %>
 </tr>

@@ -6,4 +6,8 @@ class LineItem < ApplicationRecord
   def total_price()
 		tot_price = quantity * product.price
 	end
+
+	def reduce_qty
+		quantity = quantity - 1
+	end
 end

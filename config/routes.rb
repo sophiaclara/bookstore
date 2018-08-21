@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   	get :who_bought, on: :member
 	end
 
+  post 'reduce_qty' => 'line_items#reduce_qty'
+
   scope '(:locale)' do
     resources :orders
     resources :line_items

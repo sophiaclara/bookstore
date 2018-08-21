@@ -21,6 +21,7 @@
 		</div>
 		<div id="columns">
 		<div id="side">
+		<center> <%= @time %> </center>
 		<div id="cart">
 			<% if @cart %>
 				<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
@@ -28,6 +29,7 @@
 		<% end %>
 		<% end %>
 		</div>
+
 			<ul>
 				<li><a href="/"><%= t('.home') %></a></li>
 				<li><a href="http://www..../faq"><%= t('.questions')%></a></li>

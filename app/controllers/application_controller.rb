@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
-	before_action :authorize
+	before_action :authorize , :hello
 	before_action :set_i18n_locale_from_params
   protect_from_forgery with: :exception
+
+  def hello
+    @time = Time.now
+  end
 
 	protected
 
