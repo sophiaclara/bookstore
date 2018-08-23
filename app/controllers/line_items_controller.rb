@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  skip_before_action :authorize, only: [:new, :create, :destroy]
+  skip_before_action :authorize, only: [:new, :create, :destroy, :reduce_qty]
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy, :reduce_qty]
 
@@ -68,8 +68,13 @@ class LineItemsController < ApplicationController
 
   def reduce_qty
     # line_item = LineItem.find(params[:line_item_id])
+    if @line_item.quantity > 1
     @line_item.decrement!(:quantity)
     redirect_to store_index_url
+    else
+    @line_item.destroy
+    redirect_to store_index_url
+    end
   end
 
   private

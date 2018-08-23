@@ -16,12 +16,14 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :carts
+  resources :categories
 
   resources :products do
   	get :who_bought, on: :member
 	end
 
   post 'reduce_qty' => 'line_items#reduce_qty'
+  post 'reduce_stock' => 'orders#reduce_stock'
 
   scope '(:locale)' do
     resources :orders

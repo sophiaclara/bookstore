@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  skip_before_action :authorize, only: [:new, :create]
+  skip_before_action :authorize, only: [:new, :create, :reduce_stock]
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :reduce_stock]
 
   # GET /orders
   # GET /orders.json
@@ -79,6 +79,11 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def reduce_stock
+    @order.decrement!(:stock)
+    redirect_to store_index_url
   end
 
   private

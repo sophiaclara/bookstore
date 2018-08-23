@@ -16,6 +16,11 @@
     <%= form.text_field :title, id: :product_title %>
   </div>
 
+   <div class="field">
+    <%= form.label :category %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
+  </div>
+
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :product_description, rows: 10, cols: 60 %>

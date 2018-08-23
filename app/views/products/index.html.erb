@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
+
+<div><center>
+    <%= form_tag store_index_path, :method => 'get' do %>
+  <td><br><%= text_field_tag :search, params[:search], placeholder: "Search Catalog"%>
+    <%= submit_tag("Search") %></td>
+    <% end %>
+</center></div>
+
 	<h1>Products</h1>
 		<table>
 			<% @products.each do |product| %>
@@ -9,17 +17,19 @@
 					<td class="list_description">
 					<dl>
 					<dt><%= product.title %></dt>
-					<dd><%= truncate(strip_tags(product.description),length: 200) %></dd>
+					<dd>Category: <%= product.category.try(:name) %></dd>
+					<dd><%= truncate(strip_tags(product.description),length: 1000) %></dd>
 					<p>Stock: <%= product.stock%></p>
 					</dl>
 					</td>
 					<td class="list_actions">
-					<%= link_to 'Show', product %><br/>
-					<%= link_to 'Edit', edit_product_path(product) %><br/>
-					<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-				</td>
+					<br>
+					<%= link_to 'Show', product,class: "small button" %></td>
+					<td><br><%= link_to 'Edit', edit_product_path(product), class: "small button" %></td>
+					<td><br><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },class: "small button" %>
+					</td>
 				</tr>
 		<% end %>
 		</table>
-	<br/>
-<%= link_to 'New product', new_product_path %>
+		<br>
+<%= link_to 'New product', new_product_path,class: "big button" %>
