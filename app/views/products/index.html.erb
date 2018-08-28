@@ -17,9 +17,9 @@
 					<td class="list_description">
 					<dl>
 					<dt><%= product.title %></dt>
-					<dd>Category: <%= product.category.try(:name) %></dd>
+					<dd><strong> Category: </strong> <%= product.category.try(:name) %></dd>
 					<dd><%= truncate(strip_tags(product.description),length: 1000) %></dd>
-					<p>Stock: <%= product.stock%></p>
+					<p><strong> Stock: </strong><%= product.stock%></p>
 					</dl>
 					</td>
 					<td class="list_actions">

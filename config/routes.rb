@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   # scope"(:locale)", :locale => /en|id/ do
   controller :sessions do
-	get 'login' => :new
-	post 'login' => :create
-	delete 'logout' => :destroy
+	 get 'login' => :new
+	 post 'login' => :create
+	 delete 'logout' => :destroy
 	end
 	
   get 'sessions/new'
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   post 'reduce_qty' => 'line_items#reduce_qty'
   post 'reduce_stock' => 'orders#reduce_stock'
+  get 'contact' => 'store#contact'
+  get 'question' => 'store#question'
 
   scope '(:locale)' do
     resources :orders

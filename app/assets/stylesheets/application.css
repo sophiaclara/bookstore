@@ -47,11 +47,11 @@ margin: -0.25em 0.1em;
 #banner {
 	position: relative;
 	min-height: 40px;
-	background: #9c9;
+	background: #00b3b3; 
 	padding: 10px;
 	border-bottom: 2px solid;
 	font: small-caps 40px/40px "Times New Roman", serif;
-	color: #282;
+	color: white;
 	text-align: center;
 
 img {
@@ -82,13 +82,13 @@ display: flex;
 
 	#main {
 		padding: 1em;
-		background: white;
+		background: #ccffff;
 		flex: 1;
 	}
 
 	#side {
 		padding: 1em 2em;
-		background: #AABBAA;
+		background: #AECCCE;
 
 
 form, div {

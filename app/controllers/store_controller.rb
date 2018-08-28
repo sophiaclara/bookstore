@@ -9,7 +9,12 @@ class StoreController < ApplicationController
   		else
         @products = Product.where(["title LIKE?","%#{params[:search]}%"])
   	end
-	end
+  end
 
+ def contact
+ end 
+
+ def question
+ end
 
 end
