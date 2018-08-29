@@ -8,7 +8,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @search = OrderSearch.new(params[:search])
+    @orders = @search.scope
   end
 
   # GET /orders/1
