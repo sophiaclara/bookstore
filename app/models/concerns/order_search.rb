@@ -15,7 +15,7 @@ class OrderSearch
 
   def parsed_date(date_string, default)
     Date.parse(date_string)
-  rescue ArgumentError, TypeError
+  rescue ArgumentError, TypeError 
     default
   end
 end

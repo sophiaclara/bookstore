@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  skip_before_action :authorize, only: [:new, :create, :reduce_stock]
+  skip_before_action :authorize, only: [:new, :create]
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
-  before_action :set_order, only: [:show, :edit, :update, :destroy, :reduce_stock]
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  after_action :reduce_stock, only: [:create]
 
   # GET /orders
   # GET /orders.json
@@ -83,8 +84,10 @@ class OrdersController < ApplicationController
   end
 
   def reduce_stock
-    @order.decrement!(:stock)
-    redirect_to store_index_url
+    line_items = @order.line_items
+    line_items.each do |line_item|
+      Product.find(line_item.product_id).decrement!(:stock, by = line_item.quantity)
+    end
   end
 
   private
