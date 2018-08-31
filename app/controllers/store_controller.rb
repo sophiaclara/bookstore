@@ -17,4 +17,16 @@ class StoreController < ApplicationController
  def question
  end
 
+ def news_user
+  @news = News.all
+ end 
+
+ def show_news
+  @news = News.find(params[:news_id])
+ end 
+
+ private
+  def show_news_params
+      params.require(:news).permit(:title, :content, :image)
+  end
 end

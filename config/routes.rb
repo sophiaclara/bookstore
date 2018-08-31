@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   get 'admin' => 'admin#index'
 
   # scope"(:locale)", :locale => /en|id/ do
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
   post 'reduce_stock' => 'orders#reduce_stock'
   get 'contact' => 'store#contact'
   get 'question' => 'store#question'
+  get 'news_user' => 'store#news_user'
+  get 'show_news' => 'store#show_news'
+
 
   scope '(:locale)' do
     resources :orders

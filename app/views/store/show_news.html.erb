@@ -1,0 +1,7 @@
+<h1>News</h1>
+		<table>
+					<center><h3><%= @news.title%></h3> </center>
+					<center><%= image_tag(@news.image.url, size:'400x400') %></center>
+					<dd><%= sanitize(@news.content)%></dd>
+					<td><%= link_to 'Back', news_user_path,class: "small button" %></td>
+		</table>
